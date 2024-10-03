@@ -6,6 +6,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.mitrano.statemachine": {
+      "version": "file:Finite-State-Machine",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.mitrano.utilities": {
       "version": "file:Unity-Utilities",
       "depth": 0,
@@ -70,6 +76,15 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.6.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
       "url": "https://packages.unity.com"
     },
     "com.unity.performance.profile-analyzer": {
