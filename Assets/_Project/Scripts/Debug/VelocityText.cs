@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Utilities;
 
 namespace FPSPlayground
 {
@@ -23,7 +24,9 @@ namespace FPSPlayground
 
         void Update()
         {
-            velocityText.text = "Velocity: " + rb.velocity.magnitude.ToString("F2");
+            velocityText.text = "Flat Velocity: " + rb.velocity.magnitude.ToString("F2");
+            velocityText.text += "\nHorizontal Velocity: " + rb.velocity.WithY(0).magnitude.ToString("F2");
+            velocityText.text += "\nVertical Velocity: " + rb.velocity.y.ToString("F2");
         }
         #endregion
     }
