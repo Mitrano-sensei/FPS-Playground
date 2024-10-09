@@ -30,7 +30,9 @@ namespace FPSPlayground
             if (!Application.isPlaying)
                 return;
 
-            _playerController.PrintState();
+            Debug.LogError("Not Working yet");
+
+            // _playerController.PrintState();
         }
         
     }
