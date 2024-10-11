@@ -20,7 +20,10 @@ namespace FPSPlayground
 
         void Update()
         {
-        
+            if (Input.GetKeyDown(KeyCode.RightControl))
+            {
+                Debug.Log("--- SEPARATOR ---");
+            }
         }
         #endregion
 
@@ -30,9 +33,7 @@ namespace FPSPlayground
             if (!Application.isPlaying)
                 return;
 
-            Debug.LogError("Not Working yet");
-
-            // _playerController.PrintState();
+            _playerController.PrintState();
         }
         
     }

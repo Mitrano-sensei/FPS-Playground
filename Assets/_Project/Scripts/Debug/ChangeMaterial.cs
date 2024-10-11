@@ -16,15 +16,6 @@ namespace FPSPlayground
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SwitchToRed();
-            }
-            else if (Input.GetKeyDown(KeyCode.C))
-            {
-                SwitchToGreen();
-            }
-        
         }
         #endregion
 
