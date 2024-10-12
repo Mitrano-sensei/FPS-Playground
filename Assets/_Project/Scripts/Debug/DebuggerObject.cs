@@ -1,6 +1,9 @@
 using FPSController;
 using NaughtyAttributes;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace FPSPlayground
 {
@@ -8,7 +11,10 @@ namespace FPSPlayground
     {
         #region Fields
 
-        [SerializeField] private PlayerController _playerController;
+        [SerializeField] private PlayerController playerController;
+
+        [SerializeField] private int checkPointIndex = 0;
+        [SerializeField] private List<CheckPoint> checkPoints;
 
         #endregion    
     
@@ -27,14 +33,32 @@ namespace FPSPlayground
         }
         #endregion
 
+        [Button("Teleport To Checkpoint")]
+        public void TeleportToCheckpoint()
+        {
+            var checkpoint = checkPoints[checkPointIndex];
+            if (checkpoint == null)
+                return;
+
+            playerController.transform.position = checkpoint.position.transform.position;
+        }
+
         [Button("Print State")]
         public void PrintState()
         {
             if (!Application.isPlaying)
                 return;
 
-            _playerController.PrintState();
+            playerController.PrintState();
         }
-        
+
+        [Serializable]
+        public class CheckPoint
+        {
+            public Transform position;
+        }
+
     }
+
+    
 }
