@@ -1,3 +1,4 @@
+using FPSController;
 using TMPro;
 using UnityEngine;
 using Utilities;
@@ -9,13 +10,14 @@ namespace FPSPlayground
         #region Fields
         [SerializeField] private TextMeshProUGUI velocityText;
         [SerializeField] private Rigidbody rb;
+        [SerializeField] private PlayerController playerController;
         #endregion
 
         #region MonoBehaviour
 
         private void Start()
         {
-            if (rb == null || velocityText == null)
+            if (rb == null || velocityText == null || playerController == null)
             {
                 Debug.LogError("Missing components");
                 enabled = false;
@@ -24,9 +26,9 @@ namespace FPSPlayground
 
         void Update()
         {
-            velocityText.text = "Flat Velocity: " + rb.velocity.magnitude.ToString("F2");
-            velocityText.text += "\nHorizontal Velocity: " + rb.velocity.WithY(0).magnitude.ToString("F2");
-            velocityText.text += "\nVertical Velocity: " + rb.velocity.y.ToString("F2");
+            velocityText.text = "Velocity: " + rb.velocity.magnitude.ToString("F2");
+            if (playerController.CurrentState != null) velocityText.text += "\nState : " + playerController.CurrentState.Name;
+
         }
         #endregion
     }

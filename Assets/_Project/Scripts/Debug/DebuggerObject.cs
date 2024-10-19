@@ -1,9 +1,8 @@
+using EditorAttributes;
 using FPSController;
-using NaughtyAttributes;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace FPSPlayground
 {
@@ -33,7 +32,7 @@ namespace FPSPlayground
         }
         #endregion
 
-        [Button("Teleport To Checkpoint")]
+        [Button]
         public void TeleportToCheckpoint()
         {
             var checkpoint = checkPoints[checkPointIndex];
@@ -43,7 +42,7 @@ namespace FPSPlayground
             playerController.transform.position = checkpoint.position.transform.position;
         }
 
-        [Button("Print State")]
+        [Button]
         public void PrintState()
         {
             if (!Application.isPlaying)
