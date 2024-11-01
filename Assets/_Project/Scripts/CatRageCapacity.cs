@@ -8,7 +8,7 @@ namespace FPSPlayground
     public class CatRageCapacity : MonoBehaviour
     {
         #region Fields
-        [SerializeField] private InputReader _fpsInputReader;
+        [SerializeField] private FPSInputReader _fpsInputReader;
         [SerializeField] private MMF_Player _player;
 
         [SerializeField] private float _rageDuration = 3f;

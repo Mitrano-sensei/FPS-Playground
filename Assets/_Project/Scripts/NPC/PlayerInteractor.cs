@@ -6,7 +6,7 @@ namespace FPSPlayground
 {
     public class PlayerInteractor : MonoBehaviour
     {
-        [SerializeField] private InputReader _inputReader;
+        [SerializeField] private FPSInputReader _inputReader;
         [SerializeField] private UnityEvent onInteract;
 
         private Interactable _currentInteractable;
